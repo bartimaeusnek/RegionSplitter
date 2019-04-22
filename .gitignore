@@ -3,3 +3,7 @@ bin/
 .project
 .classpath
 *.jar
+.idea
+*.iws
+*.iml
+*.ipr
