@@ -3,7 +3,6 @@ package com.github.bartimaeusnek;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
@@ -17,6 +16,11 @@ public class Main {
 	 * @param args input mca file, args[1] output files, will get set automatically (32x32 = 4096)
 	 */
 	public static void main(String[] args) {
+		if (args.length != 2){
+			System.out.println("Usage:");
+			System.out.println("splitter.jar <PathToMCA> <PathToOutputDir>");
+			return;
+		}
 		File f = new File(args[0]);
 		RegionFile minecraft_regionfile = new RegionFile(f);
 		DataInputStream raw_data = null;
